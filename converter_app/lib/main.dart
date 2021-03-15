@@ -11,11 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      //title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-     debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
   }
@@ -68,12 +68,13 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(12),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 child: Text(
                   "Moeda de Conversão",
                   style: TextStyle(
+                    height: 2,
                     color: Colors.white,
                     fontSize: 36,
                     fontWeight: FontWeight.bold,
@@ -94,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                           rate = await client.getRate(from, to);
                           setState(() {
                             result =
-                                (rate * double.parse(value)).toStringAsFixed(3);
+                                (rate * double.parse(value)).toStringAsFixed(2);
                           });
                         },
                         decoration: InputDecoration(
@@ -103,14 +104,14 @@ class _HomePageState extends State<HomePage> {
                             labelText: "Valor para Conversão",
                             labelStyle: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontSize: 18,
+                                fontSize: 20,
                                 color: secundColor)),
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                         ),
-                        textAlign: TextAlign.center,
+                        //textAlign: TextAlign.center,
                         keyboardType: TextInputType.number,
                       ),
                       SizedBox(
@@ -137,16 +138,14 @@ class _HomePageState extends State<HomePage> {
                             elevation: 0,
                             backgroundColor: secundColor,
                           ),
-                          customDropDown(currencies, from, (val) {
+                          customDropDown(currencies, to, (val) {
                             setState(() {
-                              from = val;
+                              to = val;
                             });
                           }),
                         ],
                       ),
-                      SizedBox(
-                        height: 50,
-                      ),
+                      SizedBox(height: 50),
                       Container(
                         width: double.infinity,
                         padding: EdgeInsets.all(16),

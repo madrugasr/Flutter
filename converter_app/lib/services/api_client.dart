@@ -1,6 +1,4 @@
 import 'dart:convert';
-import 'dart:html';
-
 import 'package:http/http.dart' as http;
 
 class ApiClient {
@@ -24,13 +22,13 @@ class ApiClient {
   Future<double> getRate(String from, String to) async {
     final Uri rateUrl = Uri.https('free.currconv.com', '/api/v7/convert', {
       "apiKey": "4f6ef6f6c136f9f2e860",
-      "q": "${from}_${to}",
+      "q": "${from}_$to",
       "compact": "ultra"
     });
     http.Response res = await http.get(rateUrl);
     if (res.statusCode == 200) {
       var body = jsonDecode(res.body);
-      return body["${from}_${to}"];
+      return body["${from}_$to"];
     } else {
       throw Exception("Falha conexão com a API.");
     }

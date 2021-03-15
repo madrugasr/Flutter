@@ -12,7 +12,7 @@ Widget customDropDown(List<String> items, String value, void onChange(val)) {
       onChanged: (String val) {
         onChange(val);
       },
-      items: items.map<DropdownMenuItem<String>>((String val) {
+      items: items.map<DropdownMenuItem<String>>((String val){
         return DropdownMenuItem(
           child: Text(val),
           value: val,
