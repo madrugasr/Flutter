@@ -1,4 +1,4 @@
-package com.example.converter_app
+package com.example.munze
 
 import io.flutter.embedding.android.FlutterActivity
 
