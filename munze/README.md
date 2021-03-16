@@ -1,10 +1,11 @@
-# munze
+# Munze
 
-A new Flutter project.
+Currency Converter
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project was written for study mode.
+The goal here was to build a currency converter using an external API for querying values and building currencies.
 
 A few resources to get you started if this is your first Flutter project:
 
