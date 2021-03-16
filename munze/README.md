@@ -1,6 +1,6 @@
 # Munze
 
-Currency Converter
+Currency Converter.
 
 ## Getting Started
 
