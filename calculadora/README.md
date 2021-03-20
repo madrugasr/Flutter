@@ -1,7 +1,7 @@
-# calculadora
+# Calculadora
 
-Calculadora.
+Calculator.
 
 ## Getting Started
 
-Este projeto visa contruir o layout de uma simples calculadora.
+This project aims to build the layout of a simple calculator.
